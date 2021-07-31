@@ -1,0 +1,20 @@
+{
+  "name": "dom_lite_builder",
+  "version": "0.0.1",
+  "description": "Utilities for manipulate DOM objects",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dom",
+    "typescript",
+    "javascript"
+  ],
+  "author": "byhbpag3@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "commitizen": "^4.2.4"
+  }
+}

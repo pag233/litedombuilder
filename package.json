@@ -2,9 +2,11 @@
   "name": "dom_lite_builder",
   "version": "0.0.1",
   "description": "Utilities for manipulate DOM objects",
-  "main": "dist/index.js",
+  "private": true,
   "scripts": {
-    "build": "tsc",
+    "build:dev": "npx webpack --mode development",
+    "build:pro": "npx webpack --mode production",
+    "serve": "npx webpack serve --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,6 +17,21 @@
   "author": "byhbpag3@gmail.com",
   "license": "ISC",
   "devDependencies": {
-    "commitizen": "^4.2.4"
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "commitizen": "^4.2.4",
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.1.0",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "ts-loader": "^9.2.4",
+    "typescript": "^4.3.5",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }

@@ -1,19 +1,17 @@
-import LiteDOMType, { ChildrenType } from './types/lite_dom'
+import { DomObjectType, ChildrenType, LiteDomType, NodeType } from './types/lite_dom'
 import PropType from './types/props'
 import { joinString } from './utility'
-type NodeType = HTMLElement | Text
-
 /**
- * 根据传入的LiteDOMType对象构建dom树
+ * 根据传入的DomObjectType对象构建dom树
  * @todo 完善props的处理
  */
-export default class LiteDomNode {
+export class LiteDomNode implements LiteDomType {
   _node: NodeType
   /**
    * @constructor
-   * @param domObject - LiteDOMType类型的对象
+   * @param domObject - DomObjectType类型的对象
    */
-  constructor(domObject: LiteDOMType | string) {
+  constructor(domObject: DomObjectType | string) {
     if (typeof domObject === 'string') {
       this._node = document.createTextNode(domObject);
     } else {
@@ -49,9 +47,9 @@ export default class LiteDomNode {
    * @param children - 子对象
    */
   private buildChildren(children: ChildrenType): Array<NodeType> {
-    return children.map(dom => new LiteDomNode(dom).getNode());
+    return children.map(dom => new LiteDomNode(dom).getNodes());
   }
-  public getNode(): NodeType {
+  getNodes(): NodeType {
     return this._node
   }
   /**
@@ -68,5 +66,15 @@ export default class LiteDomNode {
     } catch (error) {
       throw error
     }
+  }
+}
+
+export class LiteDomNodeList implements LiteDomType {
+  _nodes: NodeType[]
+  constructor(domObjectList: Array<DomObjectType | string>) {
+    this._nodes = domObjectList.map(dom => new LiteDomNode(dom).getNodes())
+  }
+  getNodes(): NodeType[] {
+    return this._nodes;
   }
 }

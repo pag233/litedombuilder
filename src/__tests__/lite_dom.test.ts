@@ -2,8 +2,8 @@
  * @jest-environment jsdom
  */
 
-import LiteDomNode from '../lite_dom'
-import LiteDOMType from '../types/lite_dom'
+import { LiteDomNode } from '../lite_dom'
+import { DomObjectType } from '../types/lite_dom'
 
 describe('happy path testing', () => {
   const id = 'root';
@@ -12,7 +12,7 @@ describe('happy path testing', () => {
   const innerText = 'inner text';
   const innerClass = ['bar', 'baz'];
 
-  const domObject: LiteDOMType = {
+  const domObject: DomObjectType = {
     tag: 'div',
     props: {
       classType: 'foo',
@@ -34,7 +34,7 @@ describe('happy path testing', () => {
       }
     ]
   }
-  const node = new LiteDomNode(domObject).getNode() as HTMLElement;
+  const node = new LiteDomNode(domObject).getNodes() as HTMLElement;
 
   test('test id', () => {
     expect(node.id).toEqual(id);

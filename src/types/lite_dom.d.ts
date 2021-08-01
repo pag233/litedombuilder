@@ -1,13 +1,16 @@
 import TagName from './tag'
 import PropType from './props'
 
-type ChildrenType = Array<LiteDOMType | TagName>
+type ChildrenType = Array<DomObjectType | string>
 
-interface LiteDOMType {
+type NodeType = HTMLElement | Text
+
+interface DomObjectType {
   tag: TagName
   props?: PropType
   children?: ChildrenType
 }
-
-export default LiteDOMType
-export { ChildrenType }
+interface LiteDomType {
+  getNodes(): NodeType | NodeType[]
+}
+export { DomObjectType, ChildrenType, LiteDomType, NodeType }

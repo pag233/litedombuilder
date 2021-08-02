@@ -1,4 +1,4 @@
-import { LiteralOrArray } from './types/common'
+import { LiteralOrArray } from './types/common.type'
 
 /**
  * 返字符串数组或数字数组拼接成以分隔符分割的字符串

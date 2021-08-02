@@ -1,5 +1,5 @@
-import TagName from './tag'
-import PropType from './props'
+import TagName from './tag.type'
+import { PropType } from './props.type'
 
 type ChildrenType = Array<DomObjectType | string>
 

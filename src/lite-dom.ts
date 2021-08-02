@@ -1,5 +1,6 @@
-import { DomObjectType, ChildrenType, LiteDomType, NodeType } from './types/lite_dom'
-import PropType from './types/props'
+import { LiteralOrArray } from './types/common.type';
+import { DomObjectType, ChildrenType, LiteDomType, NodeType } from './types/lite-dom.type'
+import { PropType } from './types/props.type'
 import { joinString } from './utility'
 /**
  * 根据传入的DomObjectType对象构建dom树
@@ -34,7 +35,7 @@ export class LiteDomNode implements LiteDomType {
    */
   private buildProps(element: HTMLElement, props: PropType) {
     for (const prop in props) {
-      const propString = joinString(props[prop]);
+      const propString = joinString(props[prop] as LiteralOrArray);
       if (prop === 'classType') {
         element.setAttribute('class', propString);
       } else {

@@ -1,9 +1,9 @@
 import { LiteralOrArray } from './common.type'
 
 interface PropType {
-  id?: number | string
+  id?: string
   classType?: LiteralOrArray
-  [prop: string]: LiteralOrArray | undefined
+  [prop: string]: LiteralOrArray | boolean | undefined
 }
 
 export { PropType }

@@ -1,8 +1,8 @@
-import EmmetParserType from './types/parser'
+import ParserType from './types/parser.type'
 
 class LiteDomBuilder {
-  _parser: EmmetParserType
-  constructor(parser: EmmetParserType) {
+  _parser: ParserType
+  constructor(parser: ParserType) {
     this._parser = parser
   }
   create(emmet: string) {

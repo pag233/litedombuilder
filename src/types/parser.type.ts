@@ -1,5 +1,5 @@
-import DomObjectType from './lite_dom'
-interface EmmetParserType {
-  parse(emmet: string): DomObjectType | void
+import { DomObjectBuilder } from '../dom-object-builder'
+interface ParserType {
+  parse(emmet: string): DomObjectBuilder[]
 }
-export default EmmetParserType
+export default ParserType

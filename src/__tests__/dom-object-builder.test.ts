@@ -26,10 +26,8 @@ describe('test dom object builder', () => {
     builder.append(subBuilderA).append(subBuilderB);
     const domObj = builder.getDomObject();
     expect(domObj.children).toHaveLength(2);
-    if (domObj.children) {
-      const divDomObj = domObj.children[0] as DomObjectType
-      expect(divDomObj.props?.classType === 'foo')
-    }
+    const divDomObj = domObj?.children?.[0] as DomObjectType
+    expect(divDomObj.props?.classType === 'foo')
   })
   test('test times method', () => {
     const domObjects = builder.times(5);

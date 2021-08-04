@@ -1,7 +1,7 @@
 import { LiteralOrArray } from './types/common.type';
 import { DomObjectType, ChildrenType, LiteDomType, NodeType } from './types/lite-dom.type'
 import { PropType } from './types/props.type'
-import { joinString } from './utility'
+import { joinString } from './helper'
 /**
  * 根据传入的DomObjectType对象构建dom树
  * @todo 完善props的处理

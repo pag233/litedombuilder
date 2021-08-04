@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = (env, argv) => {
+  console.log(env);
   const isDev = argv.mode === 'development' ? true : false;
   return {
     entry: path.join(__dirname, 'src', 'index.ts'),
@@ -56,6 +57,12 @@ module.exports = (env, argv) => {
       // inline: true,
       host: 'localhost',
       port: 8800,
+      watchOptions: {
+        ignored: [
+          path.resolve(__dirname, 'src/__tests__'),
+          path.resolve(__dirname, 'node_modules')
+        ]
+      }
     }
   };
 }

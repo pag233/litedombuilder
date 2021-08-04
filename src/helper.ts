@@ -1,4 +1,6 @@
 import { LiteralOrArray } from './types/common.type'
+import { cloneDeep } from 'lodash'
+
 /**
  * 返字符串数组或数字数组拼接成以分隔符分割的字符串
  * @param liteOrArr - 字符串、数字数组
@@ -10,6 +12,16 @@ function joinString(liteOrArr: LiteralOrArray | boolean, sep = " "): string {
   return liteOrArr.join(sep);
 }
 
+function expandArray<T>(array: T[], times: number): T[] {
+  let acc: T[] = [];
+  while (times > 0) {
+    acc = [...acc, ...array.map(cloneDeep)];
+    times--;
+  }
+  return acc;
+}
+
 export {
-  joinString
+  joinString,
+  expandArray
 }

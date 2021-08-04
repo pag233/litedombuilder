@@ -1,5 +1,5 @@
-import { joinString } from '../utility'
-import { LiteralOrArray } from '../types/common'
+import { joinString } from '../helper'
+import { LiteralOrArray } from '../types/common.type'
 
 
 describe('joinString', () => {

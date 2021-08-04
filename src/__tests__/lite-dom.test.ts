@@ -11,13 +11,14 @@ describe('happy path testing', () => {
   const h2Text = 'title';
   const innerText = 'inner text';
   const innerClass = ['bar', 'baz'];
-
+  const disabled = false;
   const domObject: DomObjectType = {
     tag: 'div',
     props: {
       classType: 'foo',
       id,
-      style: "color: red"
+      style: "color: red",
+      disabled
     },
     children: [
       outerText, {
@@ -39,6 +40,9 @@ describe('happy path testing', () => {
   test('test id', () => {
     expect(node.id).toEqual(id);
     expect(node.childNodes[0].nodeValue).toEqual(outerText);
+  })
+  test('test disabled attribute', () => {
+    expect(node.getAttribute('disabled')).toEqual(String(disabled));
   })
   test('test h2 inner text', () => {
     const h2 = node.querySelector('h2') as HTMLElement;

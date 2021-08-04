@@ -35,7 +35,7 @@ export class LiteDomNode implements LiteDomType {
    */
   private buildProps(element: HTMLElement, props: PropType) {
     for (const prop in props) {
-      const propString = joinString(props[prop] as LiteralOrArray);
+      const propString = joinString(props[prop] as LiteralOrArray | boolean);
       if (prop === 'classType') {
         element.setAttribute('class', propString);
       } else {

@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { LiteDomNode } from '../lite-dom'
+import { LiteDomNode } from '../lite-dom-node'
 import { DomObjectType } from '../types/lite-dom.type'
 
 describe('happy path testing', () => {

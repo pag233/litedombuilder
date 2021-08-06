@@ -18,6 +18,9 @@ export default class EmmetParser implements ParserType {
    * 
    * @param emmet - emmet 字符串
    */
+  static getParser() {
+    return new EmmetParser();
+  }
   parse(emmet: string): DomObjectBuilder[] {
     return this._parseLine(emmet);
   }

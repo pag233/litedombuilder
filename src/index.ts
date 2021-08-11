@@ -13,4 +13,8 @@ import EmmetParser from './emmet-parser'
 
 const builder = new LiteDomBuilder(EmmetParser.getParser());
 
-builder.append('#root', 'div.foo');
+builder.append('#root', 'div.foo+div.bar');
+
+builder.on('.foo@click', () => {
+  console.log('fired');
+})

@@ -116,7 +116,10 @@ export default class LiteDomBuilder {
     }
     return this;
   }
-
+  /**
+   * 直接属性对象如：{id:'foo'}则会应用至当前构建对象，若传入以选择器为键以属性对象为值的对象则修改所有匹配相应选择器对象的属性
+   * @param queryOrBuildObject - 属性对象
+   */
   attrs(queryOrBuildObject: AttrQueryObjectType | AttrQueryObjectCurrentBuildType): LiteDomBuilder {
     if (isAttrQueryCurrentBuild(queryOrBuildObject)) {
       for (const key in queryOrBuildObject) {

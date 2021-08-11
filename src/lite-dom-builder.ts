@@ -30,7 +30,12 @@ export default class LiteDomBuilder {
     this._nodes = this._parser.parse(emmet).map(builder => new LiteDomNode(builder.getDomObject()).getNodes());
     return this;
   }
-
+  /**
+   * 将当前构建节点添加至选择器匹配的节点
+   * @param selector 选择器
+   * @param nodes HTMLElement或TEXT节点数组
+   * @param emmet emmet表达式
+   */
   append(selector: string): LiteDomBuilder
   append(selector: string, nodes: NodeType[]): LiteDomBuilder;
   append(selector: string, emmet: string): LiteDomBuilder;
